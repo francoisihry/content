@@ -28,7 +28,7 @@ configuration:
     CA certificate of Kafka server (.cer)
   name: ca_cert
   defaultvalue: ""
-  type: 0
+  type: 12
   required: false
 - display: Client certificate (.cer)
   name: client_cert
@@ -489,7 +489,8 @@ script:
       required: true
       description: A topic to filter by
     - name: offset
-      description: Message offset to filter by. Acceptable values are 'Earliest', 'Latest', or any other offest number.
+      description: Message offset to filter by. Acceptable values are 'Earliest',
+        'Latest', or any other offest number.
       defaultValue: Earliest
     - name: partition
       description: Partition (number)
@@ -516,8 +517,6 @@ script:
       description: Prints all partitions for a topic.
       type: number
     description: Print all partitions for a topic
-  isfetch: true
   dockerimage: demisto/pykafka:1.0.0.128
+  isfetch: true
   runonce: false
-tests:
-  - No Test - Can not connect to instance from remote
